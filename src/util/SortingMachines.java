@@ -5,7 +5,7 @@ import model.Product;
 public class SortingMachines {
     private static int size;
 
-    public static int bubbleSortPriceAscending(Product[] products){
+    public int bubbleSortPriceAscending(Product[] products){
         int count = 0;
         size = products.length;
         for (int i = 0; i < size - 1; i++) {
@@ -21,7 +21,7 @@ public class SortingMachines {
         return count;
     }
 
-    public static int bubbleSortPriceDescending(Product[] products){
+    public int bubbleSortPriceDescending(Product[] products){
         int count = 0;
         size = products.length;
         for (int i = 0; i < size - 1; i++) {
@@ -37,7 +37,7 @@ public class SortingMachines {
         return count;
     }
 
-    public static int insertionSortPriceAscending(Product[] products){
+    public int insertionSortPriceAscending(Product[] products){
         int count = 0;
         size = products.length;
         for (int i = 1; i < size; i++) {
@@ -53,7 +53,7 @@ public class SortingMachines {
         return count;
     }
 
-    public static int insertionSortPriceDescending(Product[] products){
+    public int insertionSortPriceDescending(Product[] products){
         int count = 0;
         size = products.length;
         for (int i = 1; i < size; i++) {

@@ -10,15 +10,17 @@ public class Main {
         Product[] arrayOne = ProductGenerator.generateProducts();
         Product[] arrayTwo = ProductGenerator.generateProducts();
         Product[] arrayThree = ProductGenerator.generateProducts();
-        
-        SortingMachines.bubbleSortPriceAscending(arrayOne);
-        SortingMachines.bubbleSortPriceDescending(arrayTwo);
-        SortingMachines.insertionSortPriceAscending(arrayThree);
-        SortingMachines.insertionSortPriceDescending(arrayThree);
 
-        new SortingExperiment(arrayOne, "Bubble Sort", "Crescente", SortingMachines::bubbleSortPriceAscending).run();
-        new SortingExperiment(arrayTwo, "Bubble Sort", "Decrescente", SortingMachines::bubbleSortPriceDescending).run();
-        new SortingExperiment(arrayThree, "Insertion Sort", "Crescente", SortingMachines::insertionSortPriceAscending).run();
-        new SortingExperiment(arrayThree, "Insertion Sort", "Decrescente", SortingMachines::insertionSortPriceDescending).run();
+        SortingMachines sorter = new SortingMachines();
+        
+        sorter.bubbleSortPriceAscending(arrayOne);
+        sorter.bubbleSortPriceDescending(arrayTwo);
+        sorter.insertionSortPriceAscending(arrayThree);
+        sorter.insertionSortPriceDescending(arrayThree);
+
+        new SortingExperiment(arrayOne, "Bubble Sort", "Crescente", products -> sorter.bubbleSortPriceAscending(products)).run();
+        new SortingExperiment(arrayTwo, "Bubble Sort", "Decrescente", products -> sorter.bubbleSortPriceDescending(products)).run();
+        new SortingExperiment(arrayThree, "Insertion Sort", "Crescente", products -> sorter.insertionSortPriceAscending(products)).run();
+        new SortingExperiment(arrayThree, "Insertion Sort", "Decrescente", products -> sorter.insertionSortPriceDescending(products)).run();
     }
 }
